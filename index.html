@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="Search">
+	<head>
+		<title>BYU Bookmarks</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.1/angular.min.js"></script>
+		<script src="app.js"></script>
+		<link rel="stylesheet" type="text/css" href="app.css">
+	</head>
+	<body>
+		<div ng-controller="SearchCtrl">
+			<header>
+				<h1>BYU Bookmarks</h1>
+				<p class="add-more">Add more to <a href="https://docs.google.com/spreadsheet/ccc?key=0AjBVHYwKbJpzdDdWQUhZc3NLNlg4UXllM3doa2tINGc" target="_blank">this Google Spreadsheet</a>.</p>
+				<input type="text" ng-model="search" placeholder="Filter" id="search-input" autofocus>
+			</header>
+
+			<div class="cards">
+				<a ng-repeat="(i, item) in data | filter:search" ng-href="{{item.url}}">
+					<article title="{{item.title}}&#10;&#10;{{item.description}}">
+						<h2 ng-bind="item.title"></h2>
+						<p ng-bind="item.description"></p>
+					</article>
+				</a>
+			</div>
+
+			<footer>
+				Inspired by <a href="http://boredinprovo.com/">BoredInProvo.com</a>. Send questions or comments to <a href="https://twitter.com/trevordixon" target="_blank">@trevordixon</a>.
+			</footer>
+		</div>
+	</body>
+</html>
