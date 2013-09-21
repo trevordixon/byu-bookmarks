@@ -1,6 +1,7 @@
 var app = angular.module('Search', []);
 
-app.controller('SearchCtrl', function($scope, $http) {
+app.controller('SearchCtrl', function($scope, $http, $location) {
+    $scope.search = $location.search().filter;
     $scope.data = [];
 
     $http.get('https://spreadsheets.google.com/feeds/cells/0AjBVHYwKbJpzdDdWQUhZc3NLNlg4UXllM3doa2tINGc/od6/public/basic?alt=json')
