@@ -37,11 +37,12 @@ header {
 article {
 	display: inline-block;
 	background-color: #e1f0ff;
+	color: #3d3d3d;
 	border: 3px solid #fff;
 	width: 18%;
 	padding: 10px;
-	height: 160px;
-	overflow: hidden;
+	min-height: 160px; 
+	min-width: 200px; 
 	vertical-align: top;
 	font-size: 14px;
 }
